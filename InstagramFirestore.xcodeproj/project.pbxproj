@@ -20,6 +20,8 @@
 		0A65E1E528F652670059988B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1E428F652670059988B /* ProfileController.swift */; };
 		0A65E1E728F663BD0059988B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A65E1E628F663BD0059988B /* Assets.xcassets */; };
 		0A65E1E928F66B120059988B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1E828F66B120059988B /* Image.swift */; };
+		0A65E1EB28F6BB650059988B /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */; };
+		0A65E1ED28F6BBD20059988B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1EC28F6BBD20059988B /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		0A65E1E428F652670059988B /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		0A65E1E628F663BD0059988B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		0A65E1E828F66B120059988B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		0A65E1EC28F6BBD20059988B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		0A65E1D328F64D780059988B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		0A65E1D828F64D8D0059988B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A65E1EC28F6BBD20059988B /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,10 +218,12 @@
 				0A65E1E328F652580059988B /* NotificationController.swift in Sources */,
 				0A65E1DF28F6522C0059988B /* SearchController.swift in Sources */,
 				0A65E1C028F64D4C0059988B /* AppDelegate.swift in Sources */,
+				0A65E1ED28F6BBD20059988B /* FeedCell.swift in Sources */,
 				0A65E1E528F652670059988B /* ProfileController.swift in Sources */,
 				0A65E1DD28F6521D0059988B /* FeedController.swift in Sources */,
 				0A65E1DB28F64DE60059988B /* MainTabController.swift in Sources */,
 				0A65E1C228F64D4C0059988B /* SceneDelegate.swift in Sources */,
+				0A65E1EB28F6BB650059988B /* Extensions+UIView.swift in Sources */,
 				0A65E1E928F66B120059988B /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

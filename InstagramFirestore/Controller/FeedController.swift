@@ -22,7 +22,7 @@ class FeedController: UICollectionViewController {
 
     private func confiigureUI() {
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseID)
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reuseID)
     }
 }
 
@@ -35,8 +35,7 @@ extension FeedController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath)
-        cell.backgroundColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as! FeedCell
         return cell
     }
 }
