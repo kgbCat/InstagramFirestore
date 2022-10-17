@@ -22,6 +22,9 @@
 		0A65E1E928F66B120059988B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1E828F66B120059988B /* Image.swift */; };
 		0A65E1EB28F6BB650059988B /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */; };
 		0A65E1ED28F6BBD20059988B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65E1EC28F6BBD20059988B /* FeedCell.swift */; };
+		0AC72BA928FAC3BE006A78A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BA828FAC3BE006A78A3 /* LoginViewController.swift */; };
+		0AC72BAB28FAC3CE006A78A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BAA28FAC3CE006A78A3 /* RegisterViewController.swift */; };
+		0AC72BAF28FD123E006A78A3 /* ViewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BAE28FD123E006A78A3 /* ViewColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		0A65E1E828F66B120059988B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		0A65E1EC28F6BBD20059988B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		0AC72BA828FAC3BE006A78A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0AC72BAA28FAC3CE006A78A3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0AC72BAE28FD123E006A78A3 /* ViewColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */,
+				0AC72BAE28FD123E006A78A3 /* ViewColors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		0A65E1D628F64D860059988B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0AC72BA728FAC3A5006A78A3 /* Authentication */,
 				0A65E1DA28F64DE60059988B /* MainTabController.swift */,
 				0A65E1DC28F6521D0059988B /* FeedController.swift */,
 				0A65E1DE28F6522C0059988B /* SearchController.swift */,
@@ -140,6 +148,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0AC72BA728FAC3A5006A78A3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0AC72BA828FAC3BE006A78A3 /* LoginViewController.swift */,
+				0AC72BAA28FAC3CE006A78A3 /* RegisterViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC72BAF28FD123E006A78A3 /* ViewColors.swift in Sources */,
 				0A65E1C428F64D4C0059988B /* ViewController.swift in Sources */,
 				0A65E1E128F6523F0059988B /* ImageSelectorController.swift in Sources */,
 				0A65E1E328F652580059988B /* NotificationController.swift in Sources */,
@@ -222,8 +240,10 @@
 				0A65E1E528F652670059988B /* ProfileController.swift in Sources */,
 				0A65E1DD28F6521D0059988B /* FeedController.swift in Sources */,
 				0A65E1DB28F64DE60059988B /* MainTabController.swift in Sources */,
+				0AC72BAB28FAC3CE006A78A3 /* RegisterViewController.swift in Sources */,
 				0A65E1C228F64D4C0059988B /* SceneDelegate.swift in Sources */,
 				0A65E1EB28F6BB650059988B /* Extensions+UIView.swift in Sources */,
+				0AC72BA928FAC3BE006A78A3 /* LoginViewController.swift in Sources */,
 				0A65E1E928F66B120059988B /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
