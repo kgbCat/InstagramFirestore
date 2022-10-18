@@ -25,6 +25,8 @@
 		0AC72BA928FAC3BE006A78A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BA828FAC3BE006A78A3 /* LoginViewController.swift */; };
 		0AC72BAB28FAC3CE006A78A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BAA28FAC3CE006A78A3 /* RegisterViewController.swift */; };
 		0AC72BAF28FD123E006A78A3 /* ViewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BAE28FD123E006A78A3 /* ViewColors.swift */; };
+		0AC72BB128FD191B006A78A3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BB028FD191B006A78A3 /* CustomTextField.swift */; };
+		0AFBE2CA28FE5B6800943992 /* Exensions+UIButon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE2C928FE5B6800943992 /* Exensions+UIButon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		0AC72BA828FAC3BE006A78A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AC72BAA28FAC3CE006A78A3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AC72BAE28FD123E006A78A3 /* ViewColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewColors.swift; sourceTree = "<group>"; };
+		0AC72BB028FD191B006A78A3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0AFBE2C928FE5B6800943992 /* Exensions+UIButon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exensions+UIButon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */,
+				0AFBE2C928FE5B6800943992 /* Exensions+UIButon.swift */,
 				0AC72BAE28FD123E006A78A3 /* ViewColors.swift */,
 			);
 			path = Helpers;
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				0A65E1EC28F6BBD20059988B /* FeedCell.swift */,
+				0AC72BB028FD191B006A78A3 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 				0A65E1C428F64D4C0059988B /* ViewController.swift in Sources */,
 				0A65E1E128F6523F0059988B /* ImageSelectorController.swift in Sources */,
 				0A65E1E328F652580059988B /* NotificationController.swift in Sources */,
+				0AC72BB128FD191B006A78A3 /* CustomTextField.swift in Sources */,
 				0A65E1DF28F6522C0059988B /* SearchController.swift in Sources */,
 				0A65E1C028F64D4C0059988B /* AppDelegate.swift in Sources */,
 				0A65E1ED28F6BBD20059988B /* FeedCell.swift in Sources */,
@@ -244,6 +251,7 @@
 				0A65E1C228F64D4C0059988B /* SceneDelegate.swift in Sources */,
 				0A65E1EB28F6BB650059988B /* Extensions+UIView.swift in Sources */,
 				0AC72BA928FAC3BE006A78A3 /* LoginViewController.swift in Sources */,
+				0AFBE2CA28FE5B6800943992 /* Exensions+UIButon.swift in Sources */,
 				0A65E1E928F66B120059988B /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
