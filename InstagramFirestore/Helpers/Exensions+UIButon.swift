@@ -19,4 +19,14 @@ extension UIButton {
         attributedTitle.append(NSAttributedString(string: secondString, attributes: boldAtts))
         setAttributedTitle(attributedTitle, for: .normal)
     }
+
+    func setActionButton(_ title: String) {
+        setTitle(title, for: .normal)
+        setTitleColor(.white, for: .normal)
+        backgroundColor = ViewColor.buttonDisabled.associatedColor
+        layer.cornerRadius = 5
+        setHeight(50)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        isEnabled = false
+    }
 }

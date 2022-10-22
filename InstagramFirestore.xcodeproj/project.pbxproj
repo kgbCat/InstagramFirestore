@@ -27,6 +27,10 @@
 		0AC72BAF28FD123E006A78A3 /* ViewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BAE28FD123E006A78A3 /* ViewColors.swift */; };
 		0AC72BB128FD191B006A78A3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC72BB028FD191B006A78A3 /* CustomTextField.swift */; };
 		0AFBE2CA28FE5B6800943992 /* Exensions+UIButon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE2C928FE5B6800943992 /* Exensions+UIButon.swift */; };
+		0AFBE2CE28FEA61700943992 /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE2CD28FEA61700943992 /* Extensions+UIViewController.swift */; };
+		0AFBE2D02903A9FB00943992 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE2CF2903A9FB00943992 /* LoginViewModel.swift */; };
+		0AFBE2D22903B28300943992 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE2D12903B28300943992 /* RegisterViewModel.swift */; };
+		0AFBE2D42903B2FC00943992 /* AuthenticationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE2D32903B2FC00943992 /* AuthenticationViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		0AC72BAE28FD123E006A78A3 /* ViewColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewColors.swift; sourceTree = "<group>"; };
 		0AC72BB028FD191B006A78A3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		0AFBE2C928FE5B6800943992 /* Exensions+UIButon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exensions+UIButon.swift"; sourceTree = "<group>"; };
+		0AFBE2CD28FEA61700943992 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		0AFBE2CF2903A9FB00943992 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0AFBE2D12903B28300943992 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		0AFBE2D32903B2FC00943992 /* AuthenticationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 				0A65E1EA28F6BB650059988B /* Extensions+UIView.swift */,
 				0AFBE2C928FE5B6800943992 /* Exensions+UIButon.swift */,
 				0AC72BAE28FD123E006A78A3 /* ViewColors.swift */,
+				0AFBE2CD28FEA61700943992 /* Extensions+UIViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -136,6 +145,9 @@
 		0A65E1D728F64D8C0059988B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBE2D32903B2FC00943992 /* AuthenticationViewModelProtocol.swift */,
+				0AFBE2CF2903A9FB00943992 /* LoginViewModel.swift */,
+				0AFBE2D12903B28300943992 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFBE2CE28FEA61700943992 /* Extensions+UIViewController.swift in Sources */,
 				0AC72BAF28FD123E006A78A3 /* ViewColors.swift in Sources */,
 				0A65E1C428F64D4C0059988B /* ViewController.swift in Sources */,
 				0A65E1E128F6523F0059988B /* ImageSelectorController.swift in Sources */,
@@ -246,12 +259,15 @@
 				0A65E1ED28F6BBD20059988B /* FeedCell.swift in Sources */,
 				0A65E1E528F652670059988B /* ProfileController.swift in Sources */,
 				0A65E1DD28F6521D0059988B /* FeedController.swift in Sources */,
+				0AFBE2D22903B28300943992 /* RegisterViewModel.swift in Sources */,
 				0A65E1DB28F64DE60059988B /* MainTabController.swift in Sources */,
+				0AFBE2D42903B2FC00943992 /* AuthenticationViewModelProtocol.swift in Sources */,
 				0AC72BAB28FAC3CE006A78A3 /* RegisterViewController.swift in Sources */,
 				0A65E1C228F64D4C0059988B /* SceneDelegate.swift in Sources */,
 				0A65E1EB28F6BB650059988B /* Extensions+UIView.swift in Sources */,
 				0AC72BA928FAC3BE006A78A3 /* LoginViewController.swift in Sources */,
 				0AFBE2CA28FE5B6800943992 /* Exensions+UIButon.swift in Sources */,
+				0AFBE2D02903A9FB00943992 /* LoginViewModel.swift in Sources */,
 				0A65E1E928F66B120059988B /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

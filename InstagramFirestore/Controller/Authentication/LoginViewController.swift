@@ -11,6 +11,8 @@ class LoginViewController: UIViewController {
 
     // MARK: - Properties
 
+    private var viewModel = LoginViewModel()
+
     private let iconImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -32,13 +34,7 @@ class LoginViewController: UIViewController {
 
     private let loginButton: UIButton = {
         let bt = UIButton(type: .system)
-        bt.setTitle("Log In", for: .normal)
-        bt.setTitleColor(.white, for: .normal)
-        bt.backgroundColor = ViewColor.loginButton.associatedColor
-        bt.tintColor = .systemPurple
-        bt.layer.cornerRadius = 5
-        bt.setHeight(50)
-        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        bt.setActionButton("Log In")
         return bt
     }()
 
@@ -51,9 +47,9 @@ class LoginViewController: UIViewController {
     private let signUpButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setAttributedTitle("Don't have an account?", "Sign Up")
+        bt.addTarget(self, action: #selector(navigateToSignUp), for: .touchUpInside)
         return bt
     }()
-
 
 
     // MARK: - Lifecycle
@@ -61,54 +57,71 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.setGradient()
         configureUI()
+        configureNotificationOdservers()
     }
 
-    // MARK: - Helpers
+    // MARK: - Actions
 
+    @objc func navigateToSignUp() {
+        let registrationVc = RegisterViewController()
+        navigationController?.pushViewController(registrationVc, animated: true)
+    }
+
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.isFormValid
+    }
+
+}
+
+private extension LoginViewController {
+    // MARK: - Private Methods
     func configureUI() {
-
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
 
-        setGradient()
+        setIconImage()
+        setStackView()
+        setSignUpButon()
+    }
 
+    func setIconImage() {
         view.addSubview(iconImage)
-
-        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton, helpWithSignInButton])
-        view.addSubview(stack)
-
-        setConstraints(stack)
-
-
-
-    }
-
-    func setGradient(){
-        let gradient = CAGradientLayer()
-        gradient.colors = [ UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
-
-    func setConstraints(_ stack: UIStackView) {
-        // image icon
         iconImage.centerX(inView: view)
         iconImage.setDimensions(height: 80, width: 120)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
 
-        // stack view
+    }
+
+    func setStackView() {
+        let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton, helpWithSignInButton])
+        view.addSubview(stack)
         stack.axis = .vertical
         stack.spacing = 20
         stack.centerX(inView: view)
         stack.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
-
-        // signUpbutton
-//        signUpButton.centerX(inView: view)
-//        signUpButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 8)
-
     }
-    
+
+    func setSignUpButon() {
+        view.addSubview(signUpButton)
+        signUpButton.centerX(inView: view)
+        signUpButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+
+    func configureNotificationOdservers() {
+
+        [passwordTextField, emailTextField].forEach({ tf in
+            tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        })
+    }
 }
