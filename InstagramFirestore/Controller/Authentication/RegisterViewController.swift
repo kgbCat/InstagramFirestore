@@ -9,9 +9,10 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    // MARK: - Properties
+    // MARK: - Private Properties
 
     private var viewModel = RegisterViewModel()
+    private var profilePhoto: UIImage?
 
     private let addPhotoButton: UIButton = {
         let bt = UIButton(type: .system)
@@ -36,6 +37,7 @@ class RegisterViewController: UIViewController {
     private let signUpButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setActionButton("Sign Up")
+        bt.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return bt
     }()
     private let alreadyHaveAccountButton: UIButton = {
@@ -56,6 +58,19 @@ class RegisterViewController: UIViewController {
 
 
     // MARK: - Actions
+
+    @objc func handleSignUp() {
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let fullname = fullNameTextField.text,
+            let username = userNameTextField.text,
+            let photo = profilePhoto
+        else { return }
+
+        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, userName: username, photo: photo)
+        AuthService.registerUser(withCredentials: credentials)
+    }
 
     @objc func navigateToLogIn() {
         navigationController?.popViewController(animated: true)
@@ -95,12 +110,12 @@ extension RegisterViewController: UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
 
+        profilePhoto = selectedImage
+
         addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
         addPhotoButton.clipsToBounds = true
         addPhotoButton.layer.borderColor = UIColor.white.cgColor
         addPhotoButton.layer.borderWidth = 2
-
-        
         addPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
         dismiss(animated: true)
     }
