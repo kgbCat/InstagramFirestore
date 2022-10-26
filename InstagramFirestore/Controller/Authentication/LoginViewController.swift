@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         return bt
     }()
 
-    private let signUpButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setAttributedTitle("Don't have an account?", "Sign Up")
         bt.addTarget(self, action: #selector(navigateToSignUp), for: .touchUpInside)

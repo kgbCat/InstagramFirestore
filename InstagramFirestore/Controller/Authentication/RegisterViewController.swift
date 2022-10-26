@@ -14,7 +14,7 @@ class RegisterViewController: UIViewController {
     private var viewModel = RegisterViewModel()
     private var profilePhoto: UIImage?
 
-    private let addPhotoButton: UIButton = {
+    private lazy var addPhotoButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setImage(UIImage(named: "plus_photo"), for: .normal)
         bt.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
@@ -34,13 +34,13 @@ class RegisterViewController: UIViewController {
     private let fullNameTextField = CustomTextField(placeholder: "Fullname")
     private let userNameTextField = CustomTextField(placeholder: "Username")
 
-    private let signUpButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setActionButton("Sign Up")
         bt.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return bt
     }()
-    private let alreadyHaveAccountButton: UIButton = {
+    private lazy var alreadyHaveAccountButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setAttributedTitle("Already have an acccount?", "Log in")
         bt.addTarget(self, action: #selector(navigateToLogIn), for: .touchUpInside)
@@ -61,15 +61,23 @@ class RegisterViewController: UIViewController {
 
     @objc func handleSignUp() {
         guard
-            let email = emailTextField.text,
+            let email = emailTextField.text?.lowercased(),
             let password = passwordTextField.text,
             let fullname = fullNameTextField.text,
-            let username = userNameTextField.text,
+            let username = userNameTextField.text?.lowercased(),
             let photo = profilePhoto
         else { return }
 
-        let credentials = AuthCredentials(email: email, password: password, fullname: fullname, userName: username, photo: photo)
-        AuthService.registerUser(withCredentials: credentials)
+        ImageUploader.uploadImage(image: photo) { imageUrl in
+            let credentials = AuthCredentials(email: email, password: password, fullname: fullname, userName: username, photoUrl: imageUrl)
+            AuthService.registerUser(withCredentials: credentials) { error in
+                if let error = error {
+                    print("DEBUG: Failed to register user \(error.localizedDescription)")
+                    return
+                }
+                print("Saved to  Firestore...")
+            }
+        }
     }
 
     @objc func navigateToLogIn() {
