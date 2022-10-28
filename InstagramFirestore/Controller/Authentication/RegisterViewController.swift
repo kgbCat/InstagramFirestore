@@ -75,7 +75,7 @@ class RegisterViewController: UIViewController {
                     print("DEBUG: Failed to register user \(error.localizedDescription)")
                     return
                 }
-                print("Saved to  Firestore...")
+                self.dismiss(animated: true)
             }
         }
     }

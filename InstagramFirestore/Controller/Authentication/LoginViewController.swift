@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -32,9 +33,10 @@ class LoginViewController: UIViewController {
         return tf
     }()
 
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let bt = UIButton(type: .system)
         bt.setActionButton("Log In")
+        bt.addTarget(self, action: #selector(handleLogIn), for: .touchUpInside)
         return bt
     }()
 
@@ -63,6 +65,21 @@ class LoginViewController: UIViewController {
     }
 
     // MARK: - Actions
+    @objc func handleLogIn() {
+        guard
+            let email = emailTextField.text,
+                let password = passwordTextField.text
+        else { return }
+        Auth.auth().signIn(withEmail: email, password: password) {
+            [weak self] authResult, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("DEBUG: Failed to login user \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true)
+        }
+    }
 
     @objc func navigateToSignUp() {
         let registrationVc = RegisterViewController()

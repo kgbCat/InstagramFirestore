@@ -9,15 +9,6 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-
-struct AuthCredentials {
-    let email: String
-    let password: String
-    let fullname: String
-    let userName: String
-    let photoUrl: String
-}
-
 struct AuthService {
 
     static func registerUser(withCredentials credentials: AuthCredentials,
