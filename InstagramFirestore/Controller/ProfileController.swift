@@ -24,7 +24,7 @@ class ProfileController: UICollectionViewController {
      // MARK: - Private Methods
 
     func configureCollectionView() {
-        collectionView.backgroundColor = .cyan
+        collectionView.backgroundColor = .white
 
         collectionView.register(ProfileCell.self, forCellWithReuseIdentifier: profileCell)
         collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: profileHeader)

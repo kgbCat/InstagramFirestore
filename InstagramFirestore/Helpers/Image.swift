@@ -14,6 +14,7 @@ enum Image {
     case plusSelected, plusUnselected
     case likeSelected, likeUnselected
     case profileSelected, profileUnselected
+    case grid, list, bookMark
 
 
 }
@@ -42,6 +43,12 @@ extension Image {
             return UIImage(named: "profile_selected") ?? UIImage()
         case .profileUnselected:
             return UIImage(named: "profile_unselected") ?? UIImage()
+        case .grid:
+            return UIImage(named: "grid") ?? UIImage()
+        case .list:
+            return UIImage(named: "list") ?? UIImage()
+        case .bookMark:
+            return UIImage(named: "ribbon") ?? UIImage()
         }
     }
 }
